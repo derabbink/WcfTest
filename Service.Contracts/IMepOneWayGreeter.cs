@@ -11,14 +11,14 @@ namespace WcfTest.Service.Contracts
     /// The client will block until messages are successfully queued/delivered at the server,
     /// but the client does NOT await message processing
     /// </summary>
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://fugro.schemas/wcftest/service")]
     public interface IMepOneWayGreeter
     {
         /// <summary>
         /// Caller can say hello
         /// </summary>
         [OperationContract(IsOneWay = true)]
-        void SayHello();
+        void SayHelloOneWay();
 
         // The One-Way MEP cannot have return types
         //string ExchangeGreetings(string name);
@@ -28,6 +28,6 @@ namespace WcfTest.Service.Contracts
         /// Will NOT be returned to the client
         /// </summary>
         [OperationContract(IsOneWay = true)]
-        void CauseError();
+        void CauseErrorOneWay();
     }
 }

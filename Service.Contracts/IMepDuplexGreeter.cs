@@ -10,7 +10,7 @@ namespace WcfTest.Service.Contracts
     /// implements a greeter using the Duplex MEP (Message Exchange Pattern)
     /// This uses two One-Way MEP interfaces, one for client-to-server and one for callbacks (server-to-client)
     /// </summary>
-    [ServiceContract(CallbackContract = typeof(IMepDuplexGreeterCallback))]
+    [ServiceContract(Namespace = "http://fugro.schemas/wcftest/service", CallbackContract = typeof(IMepDuplexGreeterCallback))]
     public interface IMepDuplexGreeter
     {
         /// <summary>
@@ -18,21 +18,21 @@ namespace WcfTest.Service.Contracts
         /// through callback
         /// </summary>
         [OperationContract(IsOneWay = true)]
-        void SayHello();
+        void SayHelloDuplex();
 
         /// <summary>
         /// Caller can greet the service and get back a greeting, through callback
         /// </summary>
         /// <param name="name">caller's name</param>
         [OperationContract(IsOneWay = true)]
-        void ExchangeGreetings(string name);
+        void ExchangeGreetingsDuplex(string name);
 
         /// <summary>
         /// Causes the server to throw an exception.
         /// Will be returned to the client through callback
         /// </summary>
         [OperationContract(IsOneWay = true)]
-        void CauseError();
+        void CauseErrorDuplex();
     }
 
     public interface IMepDuplexGreeterCallback

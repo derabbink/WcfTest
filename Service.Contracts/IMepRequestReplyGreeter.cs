@@ -10,7 +10,7 @@ namespace WcfTest.Service.Contracts
     /// implements a greeter using the Request-Reply MEP (Message Exchange Pattern)
     /// The client will block until operations complete
     /// </summary>
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://fugro.schemas/wcftest/service")]
     public interface IMepRequestReplyGreeter
     {
         /// <summary>
