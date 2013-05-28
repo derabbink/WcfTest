@@ -12,9 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfTest.Client", "WcfTest.Client\WcfTest.Client.csproj", "{7C89F5B8-388E-4C11-A9E8-0FF46567C9DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6CA862AB-D258-4D07-A8F9-DADF5C23B973}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
