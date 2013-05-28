@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Service")]
+[assembly: AssemblyTitle("WcfTest.Host")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Fugro")]
-[assembly: AssemblyProduct("Service")]
+[assembly: AssemblyProduct("WcfTest.Host")]
 [assembly: AssemblyCopyright("Copyright © Fugro 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8574d1d3-dcb3-4a04-9a04-4f6e32d0e802")]
+[assembly: Guid("dd36a983-fb43-4652-8e05-96ad24ac3699")]
 
 // Version information for an assembly consists of the following four values:
 //

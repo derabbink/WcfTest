@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3B6696EF-70DF-4650-91A3-73B8A9B808E2}</ProjectGuid>
+    <ProjectGuid>{382927AE-47CE-490F-8374-09554D3B234A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WcfTest.Service.Contracts</RootNamespace>
-    <AssemblyName>WcfTest.Service.Contracts</AssemblyName>
+    <RootNamespace>WcfTest.Greeter.Contracts</RootNamespace>
+    <AssemblyName>WcfTest.Greeter.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IMepDuplexGreeter.cs" />
-    <Compile Include="IMepOneWayGreeter.cs" />
-    <Compile Include="IMepRequestReplyGreeter.cs" />
+    <Compile Include="Service\MepDuplex\IGreeter.cs" />
+    <Compile Include="Service\MepOneWay\IGreeter.cs" />
+    <Compile Include="Service\MepRequestReply\IGreeter.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

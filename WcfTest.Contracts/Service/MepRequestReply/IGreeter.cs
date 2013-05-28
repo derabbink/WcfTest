@@ -4,14 +4,14 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 
-namespace WcfTest.Service.Contracts
+namespace WcfTest.Greeter.Contracts.Service.MepRequestReply
 {
     /// <summary>
     /// implements a greeter using the Request-Reply MEP (Message Exchange Pattern)
     /// The client will block until operations complete
     /// </summary>
-    [ServiceContract(Namespace = "http://fugro.schemas/wcftest/service")]
-    public interface IMepRequestReplyGreeter
+    [ServiceContract(Name = "MepRequestReplyGreeter", Namespace = "http://fugro.schemas/wcftest/greeter")]
+    public interface IGreeter
     {
         /// <summary>
         /// Caller can say hello

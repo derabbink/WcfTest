@@ -4,38 +4,38 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 
-namespace WcfTest.Service.Contracts
+namespace WcfTest.Greeter.Contracts.Service.MepDuplex
 {
     /// <summary>
     /// implements a greeter using the Duplex MEP (Message Exchange Pattern)
     /// This uses two One-Way MEP interfaces, one for client-to-server and one for callbacks (server-to-client)
     /// </summary>
-    [ServiceContract(Namespace = "http://fugro.schemas/wcftest/service", CallbackContract = typeof(IMepDuplexGreeterCallback))]
-    public interface IMepDuplexGreeter
+    [ServiceContract(Name = "MepDuplexGreeter", Namespace = "http://fugro.schemas/wcftest/greeter", CallbackContract = typeof(IGreeterCallback))]
+    public interface IGreeter
     {
         /// <summary>
         /// Caller can say hello and receives a message processing ack,
         /// through callback
         /// </summary>
         [OperationContract(IsOneWay = true)]
-        void SayHelloDuplex();
+        void SayHello();
 
         /// <summary>
         /// Caller can greet the service and get back a greeting, through callback
         /// </summary>
         /// <param name="name">caller's name</param>
         [OperationContract(IsOneWay = true)]
-        void ExchangeGreetingsDuplex(string name);
+        void ExchangeGreetings(string name);
 
         /// <summary>
         /// Causes the server to throw an exception.
         /// Will be returned to the client through callback
         /// </summary>
         [OperationContract(IsOneWay = true)]
-        void CauseErrorDuplex();
+        void CauseError();
     }
 
-    public interface IMepDuplexGreeterCallback
+    public interface IGreeterCallback
     {
         /// <summary>
         /// Processes incoming ack from preceeding outgoing SayHello message
