@@ -11,19 +11,25 @@ namespace WcfTest.Greeter.Service.MepDuplex
     {
         public void SayHello()
         {
-            var caller = OperationContext.Current.GetCallbackChannel<IGreeterCallback>();
-            caller.AckSayHello();
+            Callback.AckSayHello();
         }
 
         public void ExchangeGreetings(string name)
         {
-            var caller = OperationContext.Current.GetCallbackChannel<IGreeterCallback>();
-            caller.AckExchangeGreetings(string.Format("Hello {0} - the MepDuplex.GreeterService", name));
+            Callback.AckExchangeGreetings(string.Format("Hello {0} - the MepDuplex.GreeterService", name));
         }
 
         public void CauseError()
         {
             throw new Exception("Error was caused in MepDuplex.GreeterService");
+        }
+
+        IGreeterCallback Callback
+        {
+            get
+            {
+                return OperationContext.Current.GetCallbackChannel<IGreeterCallback>();
+            }
         }
     }
 }

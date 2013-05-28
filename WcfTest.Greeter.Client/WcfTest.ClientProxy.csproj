@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7BBFC0D1-6223-40F7-9FEF-677029375ECD}</ProjectGuid>
+    <ProjectGuid>{6D0336B9-CAF8-4ECA-A87D-2806A8AF1E5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WcfTest.Client.Contracts</RootNamespace>
-    <AssemblyName>WcfTest.Client.Contracts</AssemblyName>
+    <RootNamespace>WcfTest.ClientProxy</RootNamespace>
+    <AssemblyName>WcfTest.ClientProxy</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,20 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Channels\IMepDuplexGreeterChannel.cs" />
-    <Compile Include="Channels\IMepOneWayGreeterChannel.cs" />
-    <Compile Include="Channels\IMepRequestReplyGreeterChannel.cs" />
-    <Compile Include="Clients\MepDuplexGreeterClient.cs" />
-    <Compile Include="Clients\MepOneWayGreeterClient.cs" />
-    <Compile Include="Clients\MepRequestReplyGreeterClient.cs" />
-    <Compile Include="IMepDuplexGreeter.cs" />
-    <Compile Include="IMepOneWayGreeter.cs" />
-    <Compile Include="IMepRequestReplyGreeter.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientFactory.cs" />
+    <Compile Include="DuplexClient.cs" />
+    <Compile Include="DuplexClientFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

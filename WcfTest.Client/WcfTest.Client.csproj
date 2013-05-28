@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{206C759A-2BA4-4FBD-9D7F-198AF657A9F2}</ProjectGuid>
+    <ProjectGuid>{7C89F5B8-388E-4C11-A9E8-0FF46567C9DF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WcfTest.Client</RootNamespace>
@@ -36,8 +36,18 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.1.30214.0\lib\Net40\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.1.30214.0\lib\Net40\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.1.30214.0\lib\Net40\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.1.30214.0\lib\Net40\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,12 +57,27 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\MepDuplexSample.cs" />
+    <Compile Include="Samples\MepOneWaySample.cs" />
+    <Compile Include="Samples\MepRequestReplySample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WcfTest.Contracts\WcfTest.Greeter.Contracts.csproj">
+      <Project>{382927AE-47CE-490F-8374-09554D3B234A}</Project>
+      <Name>WcfTest.Greeter.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfTest.Greeter.Client\WcfTest.ClientProxy.csproj">
+      <Project>{6D0336B9-CAF8-4ECA-A87D-2806A8AF1E5C}</Project>
+      <Name>WcfTest.ClientProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfTest.Service\WcfTest.Greeter.Service.csproj">
+      <Project>{955777FA-098D-4E9E-9CFC-1F1F0A785DAC}</Project>
+      <Name>WcfTest.Greeter.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

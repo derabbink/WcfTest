@@ -48,10 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Service.Contracts\Service.Contracts.csproj">
-      <Project>{3B6696EF-70DF-4650-91A3-73B8A9B808E2}</Project>
-      <Name>Service.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WcfTest.Contracts\WcfTest.Greeter.Contracts.csproj">
       <Project>{382927AE-47CE-490F-8374-09554D3B234A}</Project>
       <Name>WcfTest.Greeter.Contracts</Name>
