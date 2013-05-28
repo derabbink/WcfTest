@@ -10,20 +10,13 @@ namespace WcfTest.ClientProxy
     /// Wrapper class for WCF duplex channel that can disposed of without throwing exeptions
     /// </summary>
     /// <typeparam name="T">service contract type</typeparam>
-    /// <typeparam name="U">callback service contract type</typeparam>
-    public class DuplexClient<T, U> : IDisposable
+    public class DuplexClient<T> : IDisposable
     {
         public T Channel { get; private set; }
 
-        public DuplexClient(T channel, U callbackHandler)
+        public DuplexClient(T channel)
         {
             Channel = channel;
-
-            // Construct InstanceContext to handle messages on callback interface
-            InstanceContext instanceContext = new InstanceContext(callbackHandler);
-
-            // Create a client
-            //CalculatorDuplexClient client = new CalculatorDuplexClient(instanceContext);
         }
 
         public void Dispose()
