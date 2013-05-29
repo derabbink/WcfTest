@@ -1,6 +1,8 @@
 # WcfTest
+
 A code example that demonstrates WCF's three Message Exchange Patterns (MEP) while maximizing code reuse keeping `App.config` small.
-The code features a client that can send greetings to a server, which will
+The code features a client that can send greetings to a server, which will send back and ack, a greeting of its own, an exception, or nothing at all.
+
 
 ## How To Run
 
@@ -11,11 +13,12 @@ The code features a client that can send greetings to a server, which will
 
 If upon running the client, the server generates an exception (in debug mode), just continue running the application. The exceptions thrown are intended to demonstrate how exceptions travel between server and client.
 
+
 ## Purpose
+
 This code is for demonstration purposes only. That's also the reason why there are no tests.
 
 ## Assemblies and Dependencies
-
 `WcfTest.Host` requires the following assemblies:
 
  * `WcfTest.Greeter.Contracts`
@@ -30,7 +33,9 @@ This code is for demonstration purposes only. That's also the reason why there a
 
 This reuse of assemblies is much cleaner than using Visual Studios 'Add Service Reference', or the `svcutil` command.
 
+
 ## Credits
+
 This work was inspired by Miguel Castro's [article][1], which I found through [this answer][2] on Stackoverflow.
 
  [1]: http://code-magazine.com/article.aspx?quickid=0809101
